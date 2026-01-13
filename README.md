@@ -33,7 +33,7 @@ Materi disusun sistematis berdasarkan kitab panduan Fiqih:
 
 ## 🚀 Cara Menggunakan
 Cukup buka tautan berikut di browser HP atau Laptop kamu:
-[LINK_WEBSITE_GITHUB_PAGES_KAMU_DISINI]
+https://faisalwich.github.io/ngajiyuk/
 
 ---
-Dibuat dengan ❤️ untuk kemudahan belajar Islam.
+Dibuat untuk kemudahan belajar Islam.
