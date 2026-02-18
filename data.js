@@ -40,6 +40,7 @@ const sholatCategories = [
   { id: "bab4", nama: "BAB IV: Shalat Fardhu", desc: "Wajib 5 Waktu", icon: "🕌" },
   { id: "bab5", nama: "BAB V: Shalat Sunnah", desc: "14 Macam Sunnah", icon: "✨" },
   { id: "bab6", nama: "BAB VI: Kumpulan Doa", desc: "Doa Harian Lengkap", icon: "🤲" },
+  { id: "bab7", nama: "BAB VII: Ramadhan", desc: "Puasa & Zakat Fitrah", icon: "🌙" },
 ];
 
 // 3. DATABASE KONTEN LENGKAP
@@ -413,6 +414,40 @@ const prayersData = [
     arti: "Doa sebelum makan.",
   },
   { catId: "bab6", id: "doa-tidur", nama: "Doa Sebelum Tidur", type: "bacaan", arab: "بِسْمِكَ اللّهُمَّ اَحْيَا وَ بِسْمِكَ اَمُوْتُ", latin: "Bismika Allahumma ahyaa...", arti: "Doa tidur." },
+
+  // --- BAB VII: PUASA RAMADHAN & ZAKAT ---
+  { 
+    catId: "bab7", id: "syarat-puasa", nama: "1. Panduan Puasa", type: "teori", 
+    content: "Syarat Wajib Puasa:\n1. Islam\n2. Baligh & Berakal\n3. Mampu (Tidak sakit parah/tua renta)\n4. Suci dari haid & nifas.\n\nRukun Puasa:\n1. Niat (di malam hari sebelum subuh).\n2. Menahan diri dari hal yang membatalkan puasa mulai terbit fajar (subuh) hingga terbenam matahari (maghrib).\n\nHal yang Membatalkan:\nMakan/minum disengaja, muntah disengaja, berhubungan suami istri di siang hari, keluar haid/nifas, gila, dan murtad." 
+  },
+  { 
+    catId: "bab7", id: "niat-puasa-harian", nama: "2. Niat Puasa (Harian)", type: "bacaan", 
+    arab: "نَوَيْتُ صَوْمَ غَدٍ عَنْ أَدَاءِ فَرْضِ شَهْرِ رَمَضَانَ هٰذِهِ السَّنَةِ لِلّٰهِ تَعَالَى", 
+    latin: "Nawaitu shauma ghadin 'an adaa'i fardhi syahri Ramadhaana haadzihis sanati lillaahi ta'aalaa.", 
+    arti: "Aku niat berpuasa esok hari untuk menunaikan kewajiban puasa bulan Ramadhan tahun ini karena Allah Ta'ala.",
+    audioUrl: "" 
+  },
+  { 
+    catId: "bab7", id: "niat-puasa-sebulan", nama: "3. Niat Puasa (Sebulan Penuh)", type: "bacaan", 
+    arab: "نَوَيْتُ صَوْمَ جَمِيْعِ شَهْرِ رَمَضَانَ هٰذِهِ السَّنَةِ لِلّٰهِ تَعَالَى", 
+    latin: "Nawaitu shauma jamii'i syahri Ramadhaana haadzihis sanati lillaahi ta'aalaa.", 
+    arti: "Aku niat berpuasa selama satu bulan penuh di bulan Ramadhan tahun ini karena Allah Ta'ala. (Sunnah dibaca di malam pertama Ramadhan untuk jaga-jaga jika suatu malam lupa berniat).",
+    audioUrl: "" 
+  },
+  { 
+    catId: "bab7", id: "doa-buka-puasa", nama: "4. Doa Buka Puasa", type: "bacaan", 
+    arab: "ذَهَبَ الظَّمَأُ، وَابْتَلَّتِ الْعُرُوقُ، وَثَبَتَ الْأَجْرُ إِنْ شَاءَ اللَّهُ", 
+    latin: "Dzahabaz zhama'u wabtallatil 'uruuqu wa tsabatal ajru, insyaa Allah.", 
+    arti: "Telah hilang rasa haus, telah basah urat-urat, dan telah pasti ganjaran, dengan kehendak Allah. (HR. Abu Daud)",
+    audioUrl: "" 
+  },
+  { 
+    catId: "bab7", id: "zakat-fitrah", nama: "5. Niat Zakat Fitrah (Diri Sendiri)", type: "bacaan", 
+    arab: "نَوَيْتُ أَنْ أُخْرِجَ زَكَاةَ الْفِطْرِ عَنْ نَفْسِيْ فَرْضًا لِلّٰهِ تَعَالَى", 
+    latin: "Nawaitu an ukhrija zakaatal fithri 'an nafsii fardhan lillaahi ta'aalaa.", 
+    arti: "Aku niat mengeluarkan zakat fitrah untuk diriku sendiri, fardhu karena Allah Ta'ala. (Besarannya 2,5 kg atau 3,5 liter beras/makanan pokok).",
+    audioUrl: "" 
+  }
 ];
 
 // 4. DATA GERAKAN (UNIVERSAL & WUDHU)
@@ -451,3 +486,4 @@ const wudhuSteps = [
   { nama: "Mengusap Kepala", gerakan: "Usap sebagian kepala.", arab: "-", latin: "-", audioUrl: "" },
   { nama: "Membasuh Kaki", gerakan: "Basuh hingga mata kaki.", arab: "-", latin: "-", audioUrl: "" },
 ];
+
