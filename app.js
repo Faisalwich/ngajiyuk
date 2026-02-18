@@ -157,15 +157,17 @@ function renderBookmarkBanner() {
     if (!banner) {
         banner = document.createElement("div");
         banner.id = "bookmark-banner";
-        banner.className = "mb-6 cursor-pointer";
+        banner.className = "mb-6"; 
         container.insertBefore(banner, container.firstChild);
     }
 
     const data = localStorage.getItem("ngajiBookmark");
     if (data) {
         const b = JSON.parse(data);
+        
+        // UI Banner - Menghilangkan onclick dari HTML agar aman dari tanda kutip
         banner.innerHTML = `
-            <div onclick="fetchAndRenderSurah(${b.surahNum}, '${b.surahName}', ${b.ayahNum})" class="bg-gradient-to-r from-emerald-500 to-teal-500 p-4 rounded-2xl text-white shadow-md flex justify-between items-center hover:shadow-lg transition-all active:scale-95">
+            <div id="btn-bookmark-card" class="bg-gradient-to-r from-emerald-500 to-teal-500 p-4 rounded-2xl text-white shadow-md flex justify-between items-center hover:shadow-lg transition-all active:scale-95 cursor-pointer">
                 <div class="flex items-center gap-4">
                     <div class="text-3xl bg-white/20 w-12 h-12 flex items-center justify-center rounded-xl">📖</div>
                     <div>
@@ -175,6 +177,12 @@ function renderBookmarkBanner() {
                 </div>
                 <div class="text-emerald-100 font-bold bg-white/20 px-4 py-2 rounded-xl text-sm">Lanjutkan ➔</div>
             </div>`;
+            
+        // Logika Klik dipasang di JavaScript (Lebih Aman)
+        document.getElementById("btn-bookmark-card").onclick = () => {
+            fetchAndRenderSurah(b.surahNum, b.surahName, b.ayahNum);
+        };
+
         banner.classList.remove("hidden");
     } else {
         banner.classList.add("hidden");
@@ -356,3 +364,4 @@ function showSurahList() {
   toggleMengajiView(false);
   document.getElementById("search-container").classList.remove("hidden");
 }
+
