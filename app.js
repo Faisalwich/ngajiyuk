@@ -19,29 +19,16 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-function stopAllAudio() {
-  if (currentAudio) {
-    currentAudio.pause();
-    currentAudio = null;
-  }
-  if ("speechSynthesis" in window) {
-    window.speechSynthesis.cancel();
-  }
-  document.querySelectorAll(".ayah-card, .sholat-card").forEach((card) => card.classList.remove("playing-ayah", "playing-sholat"));
-  document.querySelectorAll(".btn-play, .btn-sholat-play").forEach((btn) => (btn.innerHTML = `▶`));
-}
-
 // ==========================================
-// 2. LOGIKA MENGAJI & AL-QURAN (NEW API EQURAN.ID)
+// 2. LOGIKA MENGAJI & AL-QURAN (EQURAN.ID)
 // ==========================================
 async function fetchSurahList() {
   try {
-    // Menggunakan API EQuran (Spesial Indonesia)
     const res = await fetch("https://equran.id/api/v2/surat");
     const json = await res.json();
     allSurahs = json.data;
     displaySurahs(allSurahs);
-    renderBookmarkBanner(); // Memanggil banner bookmark
+    renderBookmarkBanner(); 
   } catch (e) {
     console.error("API Error");
   }
@@ -78,26 +65,28 @@ async function fetchAndRenderSurah(num, name, scrollToAyah = null) {
   const list = document.getElementById("list-ayat");
   const title = document.getElementById("section-title");
   
-  // Tampilan Loading
   list.innerHTML = `<div class="text-center p-10"><span class="text-lg text-emerald-600 font-bold animate-pulse">⏳ Memuat Surah...</span></div>`;
-  document.getElementById("search-container").classList.add("hidden");
+  const searchContainer = document.getElementById("search-container");
+  if(searchContainer) searchContainer.classList.add("hidden");
 
   try {
     const res = await fetch(`https://equran.id/api/v2/surat/${num}`);
     const json = await res.json();
     const surahData = json.data;
+    
+    // Mengamankan nama surat dari tanda kutip (Contoh: Al-Ma'idah)
+    const safeSurahName = surahData.namaLatin.replace(/'/g, "\\'");
 
     title.innerHTML = `<h2 class="text-3xl font-bold text-slate-900 mb-2">${surahData.namaLatin}</h2><p class="text-slate-500 text-xs font-bold uppercase">${surahData.jumlahAyat} Ayat • ${surahData.tempatTurun}</p>`;
     list.innerHTML = "";
 
     surahData.ayat.forEach((ayah) => {
       const card = document.createElement("div");
-      card.id = `ayah-${ayah.nomorAyat}`; // ID untuk fitur scroll Bookmark
-      card.className = "ayah-card bg-white p-6 md:p-8 rounded-3xl border border-slate-100 shadow-sm mb-4";
+      card.id = `ayah-${ayah.nomorAyat}`; 
+      card.className = "ayah-card bg-white p-6 md:p-8 rounded-3xl border border-slate-100 shadow-sm mb-4 transition-all duration-700";
       
-      const audioUrl = ayah.audio['05']; // Mengambil audio Misyari Rasyid
+      const audioUrl = ayah.audio['05'];
 
-      // UI BARU: ARAB, LATIN, DAN TERJEMAHAN YANG RAPI
       card.innerHTML = `
         <div class="flex flex-col gap-4 text-left">
             <div class="flex justify-between items-start gap-4 mb-2">
@@ -112,7 +101,7 @@ async function fetchAndRenderSurah(num, name, scrollToAyah = null) {
             </div>
             
             <div class="flex justify-between items-center mt-2 pt-2 border-t border-slate-100">
-                <button onclick="saveBookmark(${num}, '${surahData.namaLatin}', ${ayah.nomorAyat})" class="flex items-center gap-2 text-xs font-bold text-slate-400 hover:text-emerald-600 transition-colors px-3 py-2 rounded-lg hover:bg-emerald-50">
+                <button onclick="saveBookmark(${num}, '${safeSurahName}', ${ayah.nomorAyat})" class="flex items-center gap-2 text-xs font-bold text-slate-400 hover:text-emerald-600 transition-colors px-3 py-2 rounded-lg hover:bg-emerald-50">
                     <span class="text-lg">🔖</span> Tandai Terakhir Baca
                 </button>
                 <button onclick="playQuranAudio('${audioUrl}', this)" class="btn-play bg-emerald-100 text-emerald-600 w-12 h-12 rounded-xl flex items-center justify-center shadow-sm active:scale-90 transition-all hover:bg-emerald-500 hover:text-white text-lg">
@@ -123,19 +112,19 @@ async function fetchAndRenderSurah(num, name, scrollToAyah = null) {
       list.appendChild(card);
     });
 
-    // Logika jika dibuka dari Bookmark (Scroll otomatis ke ayat)
+    // Fitur Meluncur (Scroll otomatis ke ayat)
     if (scrollToAyah) {
       setTimeout(() => {
         const el = document.getElementById(`ayah-${scrollToAyah}`);
         if (el) {
             el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            el.classList.add('ring-4', 'ring-emerald-300', 'transition-all');
-            setTimeout(() => el.classList.remove('ring-4', 'ring-emerald-300'), 2000);
+            el.classList.add('ring-4', 'ring-emerald-400', 'bg-emerald-50');
+            setTimeout(() => el.classList.remove('ring-4', 'ring-emerald-400', 'bg-emerald-50'), 2500);
         }
-      }, 500);
+      }, 800); 
     }
   } catch (e) {
-    list.innerHTML = `<p class="text-red-500 text-center font-bold">Gagal memuat ayat. Periksa koneksi internet.</p>`;
+    list.innerHTML = `<p class="text-red-500 text-center font-bold mt-10">Gagal memuat ayat. Periksa koneksi internet.</p>`;
   }
 }
 
@@ -145,43 +134,52 @@ async function fetchAndRenderSurah(num, name, scrollToAyah = null) {
 function saveBookmark(surahNum, surahName, ayahNum) {
     const bookmark = { surahNum, surahName, ayahNum };
     localStorage.setItem("ngajiBookmark", JSON.stringify(bookmark));
-    alert(`🔖 Berhasil ditandai: Surah ${surahName} Ayat ${ayahNum}`);
-    renderBookmarkBanner();
+    alert(`🔖 Berhasil ditandai:\nSurah ${surahName} Ayat ${ayahNum}`);
 }
 
 function renderBookmarkBanner() {
-    const container = document.getElementById("search-container");
-    if (!container) return;
+    const searchContainer = document.getElementById("search-container");
+    const surahList = document.getElementById("surah-list");
+    const anchor = searchContainer || surahList;
+    if (!anchor) return;
     
     let banner = document.getElementById("bookmark-banner");
     if (!banner) {
         banner = document.createElement("div");
         banner.id = "bookmark-banner";
-        banner.className = "mb-6"; 
-        container.insertBefore(banner, container.firstChild);
+        banner.className = "mb-6 w-full"; 
+        anchor.parentNode.insertBefore(banner, anchor);
     }
 
     const data = localStorage.getItem("ngajiBookmark");
     if (data) {
         const b = JSON.parse(data);
         
-        // UI Banner - Menghilangkan onclick dari HTML agar aman dari tanda kutip
         banner.innerHTML = `
-            <div id="btn-bookmark-card" class="bg-gradient-to-r from-emerald-500 to-teal-500 p-4 rounded-2xl text-white shadow-md flex justify-between items-center hover:shadow-lg transition-all active:scale-95 cursor-pointer">
+            <div id="bookmark-card-inner" class="bg-gradient-to-r from-emerald-500 to-teal-500 p-4 md:p-5 rounded-2xl text-white shadow-md flex justify-between items-center hover:shadow-lg transition-all active:scale-95 cursor-pointer border border-emerald-400">
                 <div class="flex items-center gap-4">
                     <div class="text-3xl bg-white/20 w-12 h-12 flex items-center justify-center rounded-xl">📖</div>
                     <div>
                         <p class="text-[10px] text-emerald-100 font-bold uppercase tracking-widest mb-1">Terakhir Dibaca</p>
-                        <h4 class="font-bold text-lg leading-none">${b.surahName} : Ayat ${b.ayahNum}</h4>
+                        <h4 class="font-bold text-lg md:text-xl leading-none">${b.surahName} : Ayat ${b.ayahNum}</h4>
                     </div>
                 </div>
-                <div class="text-emerald-100 font-bold bg-white/20 px-4 py-2 rounded-xl text-sm">Lanjutkan ➔</div>
+                <button id="bookmark-btn-inner" class="bg-white text-emerald-700 font-extrabold px-4 md:px-5 py-2.5 rounded-xl text-sm shadow-sm hover:bg-emerald-50 active:scale-90 transition-all cursor-pointer">
+                    Lanjutkan ➔
+                </button>
             </div>`;
             
-        // Logika Klik dipasang di JavaScript (Lebih Aman)
-        document.getElementById("btn-bookmark-card").onclick = () => {
+        // Logika Klik (Aman dari error)
+        const goToBookmark = (e) => {
+            e.stopPropagation(); 
             fetchAndRenderSurah(b.surahNum, b.surahName, b.ayahNum);
         };
+
+        const cardElement = document.getElementById("bookmark-card-inner");
+        const btnElement = document.getElementById("bookmark-btn-inner");
+        
+        if (cardElement) cardElement.onclick = goToBookmark;
+        if (btnElement) btnElement.onclick = goToBookmark;
 
         banner.classList.remove("hidden");
     } else {
@@ -190,7 +188,7 @@ function renderBookmarkBanner() {
 }
 
 // ==========================================
-// 4. LOGIKA SHOLAT & PANDUAN
+// 4. LOGIKA SHOLAT & PANDUAN (ENSIKLOPEDIA)
 // ==========================================
 function renderHijaiyah() {
   const grid = document.getElementById("grid-hijaiyah");
@@ -286,6 +284,18 @@ function addSholatCard(container, step, idx) {
 // ==========================================
 // 5. UTILS AUDIO & NAVIGASI
 // ==========================================
+function stopAllAudio() {
+  if (currentAudio) {
+    currentAudio.pause();
+    currentAudio = null;
+  }
+  if ("speechSynthesis" in window) {
+    window.speechSynthesis.cancel();
+  }
+  document.querySelectorAll(".ayah-card, .sholat-card").forEach((card) => card.classList.remove("playing-ayah", "playing-sholat"));
+  document.querySelectorAll(".btn-play, .btn-sholat-play").forEach((btn) => (btn.innerHTML = `▶`));
+}
+
 function playQuranAudio(url, btn) {
   const card = btn.closest(".ayah-card");
 
@@ -351,10 +361,14 @@ function toggleMengajiView(isDetail) {
   document.getElementById("hijaiyah-section").classList.toggle("hidden", isDetail);
   document.getElementById("header-section").classList.toggle("hidden", isDetail);
   
-  // Sembunyikan banner bookmark kalau lagi masuk di dalam surah, tampilkan kalau di list
+  // Mengatur kapan banner harus tampil / sembunyi
   const banner = document.getElementById("bookmark-banner");
-  if(banner && localStorage.getItem("ngajiBookmark")) {
-      banner.classList.toggle("hidden", isDetail);
+  if(banner) {
+      if (!isDetail && localStorage.getItem("ngajiBookmark")) {
+          banner.classList.remove("hidden");
+      } else {
+          banner.classList.add("hidden");
+      }
   }
   window.scrollTo(0, 0);
 }
@@ -362,6 +376,7 @@ function toggleMengajiView(isDetail) {
 function showSurahList() {
   stopAllAudio();
   toggleMengajiView(false);
-  document.getElementById("search-container").classList.remove("hidden");
+  const searchContainer = document.getElementById("search-container");
+  if(searchContainer) searchContainer.classList.remove("hidden");
+  renderBookmarkBanner(); 
 }
-
