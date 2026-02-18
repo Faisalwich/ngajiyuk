@@ -217,18 +217,46 @@ function addSholatCard(container, step, idx) {
 // ==========================================
 // 4. UTILS AUDIO & NAVIGASI
 // ==========================================
+// --- FUNGSI AUDIO QURAN YANG SUDAH DIPERBAIKI (PLAY/PAUSE) ---
 function playQuranAudio(url, btn) {
   const card = btn.closest(".ayah-card");
-  stopAllAudio();
+
+  // Jika lagu yang SAMA sedang diputar, maka PAUSE
+  if (currentAudio && currentAudio.src === url && !currentAudio.paused) {
+    currentAudio.pause();
+    btn.innerHTML = `▶`; // Ubah ikon jadi Play lagi
+    card.classList.remove("playing-ayah"); // Hilangkan efek kedap-kedip
+    return; // Berhenti mengeksekusi kode di bawahnya
+  }
+
+  // Jika lagu yang SAMA sedang di-PAUSE, maka LANJUTKAN (RESUME)
+  if (currentAudio && currentAudio.src === url && currentAudio.paused) {
+    currentAudio.play();
+    btn.innerHTML = `||`; // Ubah ikon jadi Pause
+    card.classList.add("playing-ayah");
+    return;
+  }
+
+  // Jika MEMUTAR AYAT BARU (ayat lain)
+  stopAllAudio(); // Matikan ayat yang sebelumnya (jika ada)
   currentAudio = new Audio(url);
-  btn.innerHTML = `⏳`;
+  btn.innerHTML = `⏳`; // Loading
+  
   currentAudio.onplay = () => {
     card.classList.add("playing-ayah");
-    btn.innerHTML = `||`;
+    btn.innerHTML = `||`; // Berubah jadi Pause saat lagu mulai
   };
+  
   currentAudio.onended = () => {
+    stopAllAudio(); // Kembali ke Play saat lagu habis
+  };
+  
+  // Tangani error jika internet putus
+  currentAudio.onerror = () => {
+    alert("Gagal memuat ayat. Periksa koneksi internet Anda.");
     stopAllAudio();
   };
+
   currentAudio.play();
 }
 
@@ -305,4 +333,5 @@ function showSurahList() {
   toggleMengajiView(false);
   document.getElementById("search-container").classList.remove("hidden");
 }
+
 
