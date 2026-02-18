@@ -194,30 +194,26 @@ function renderSholatDetail(prayer) {
 function addSholatCard(container, step, idx) {
   const div = document.createElement("div");
   div.className = "sholat-card bg-white p-8 rounded-3xl border border-slate-100 shadow-sm mb-6 transition-all";
-
-  let btnHtml = "";
-  if (step.arab !== "-") {
-    // Tombol play hanya muncul jika ada text arab
-    btnHtml = `<button onclick="playSholatMix('${step.arab.replace(/'/g, "\\'")}', '${
-      step.audioUrl || ""
-    }', this)" class="btn-sholat-play bg-emerald-500 text-white p-3 rounded-xl shadow-lg active:scale-90 transition-all">▶</button>`;
-  }
+  
+  // Periksa apakah ini data dari prayersData (punya properti 'arti') atau langkah gerakan (punya properti 'gerakan')
+  const panduanText = step.gerakan ? `<strong>Panduan:</strong> ${step.gerakan}` : `<strong>Arti:</strong> ${step.arti || "Tidak ada terjemahan."}`;
 
   div.innerHTML = `
-    <div class="flex justify-between items-start mb-4">
-        <div>
-            <span class="text-[10px] font-bold text-emerald-600 uppercase">Bagian ${idx}</span>
-            <h4 class="text-xl font-bold text-slate-800">${step.nama}</h4>
-        </div>
-        ${btnHtml}
+    <div class="mb-4 border-b border-slate-100 pb-4">
+        <span class="text-[10px] font-bold text-emerald-600 uppercase tracking-wider">Bagian ${idx}</span>
+        <h4 class="text-xl font-bold text-slate-800 mt-1">${step.nama}</h4>
     </div>
-    ${step.arab !== "-" ? `<p class="text-slate-800 text-right text-3xl font-bold leading-loose mb-2" dir="rtl">${step.arab}</p>` : ""}
-    ${step.latin !== "-" ? `<p class="text-emerald-700 italic text-sm mb-4">${step.latin}</p>` : ""}
-    <div class="text-slate-500 text-xs bg-slate-50 p-4 rounded-xl border-l-4 border-emerald-400 text-left"><strong>Panduan:</strong> ${step.gerakan}</div>
+    
+    ${step.arab !== "-" ? `<p class="text-slate-800 text-right text-3xl font-bold leading-loose mb-4 font-arabic" dir="rtl">${step.arab.replace(/\n/g, "<br>")}</p>` : ""}
+    
+    ${step.latin !== "-" ? `<p class="text-emerald-700 italic text-sm mb-4 leading-relaxed">${step.latin}</p>` : ""}
+    
+    <div class="text-slate-600 text-sm bg-slate-50 p-4 rounded-xl border-l-4 border-emerald-400 text-left mt-4">
+        ${panduanText}
+    </div>
   `;
   container.appendChild(div);
 }
-
 // ==========================================
 // 4. UTILS AUDIO & NAVIGASI
 // ==========================================
@@ -309,3 +305,4 @@ function showSurahList() {
   toggleMengajiView(false);
   document.getElementById("search-container").classList.remove("hidden");
 }
+
