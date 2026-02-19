@@ -265,3 +265,24 @@ const wudhuSteps = [
   { nama: "Mengusap Kepala", gerakan: "Mengusap sebagian rambut atau kepala dengan tangan yang dibasahi air (3x).", arab: "-", latin: "-", arti: "-" },
   { nama: "Membasuh Kedua Kaki", gerakan: "Membasuh kaki kanan hingga mata kaki (3x) dipastikan sela-sela jari bersih, lalu dilanjutkan kaki kiri (3x).", arab: "-", latin: "-", arti: "-" }
 ];
+
+
+// ==========================================
+// 5. DATA KULTUM & KAJIAN YOUTUBE
+// ==========================================
+const kultumData = [
+  {
+    id: "kultum-1",
+    title: "Sebuah Tamparan Lembut: Mengapa Kita Harus Menahan Lapar?",
+    speaker: "Pandji Pragiwaksono & Ustaz Felix Siauw ",
+    videoId: "wUtWzEt1RM4",
+    content: [
+      "Pernahkah kita menyadari satu kekeliruan besar yang terus berulang setiap tahun? Kita sering menyebut bulan suci ini sebagai <strong>'Bulan Puasa'</strong>. Seolah-olah, menahan lapar dan haus dari fajar hingga senja adalah pemeran utama dari ibadah kita. Padahal, Al-Qur'an tidak pernah memperkenalkannya dengan cara seperti itu.",
+      "Coba perhatikan ayatnya. Allah secara spesifik menyebutnya sebagai <strong>Bulan diturunkannya Al-Qur'an</strong>. Puasa—atau kewajiban menahan makan dan minum—hanyalah <em>efek samping</em> yang diciptakan agar kita bisa mencapai tujuan utama tersebut. Lalu, mengapa harus dengan rasa lapar?",
+      "Logikanya sungguh indah dan menampar. Coba hitung, seberapa banyak waktu, energi, dan pikiran yang kita habiskan setiap hari hanya untuk urusan perut? Mulai dari memikirkan menu sarapan, repot memasak, mengantre makan siang, hingga rasa kantuk dan malas yang menyerang setelah kekenyangan. <strong>Urusan makan adalah distraksi terbesar bagi manusia.</strong>",
+      "Dengan mewajibkan kita berpuasa, Allah sebenarnya sedang mematikan distraksi terbesar itu. Allah mengosongkan jadwal kita. Bayangkan betapa banyak waktu luang yang tercipta di siang hari saat ritual makan ditiadakan. <strong>Waktu luang inilah ruang kosong yang Allah siapkan agar kita bisa duduk tenang berduaan dengan Al-Qur'an.</strong>",
+      "Namun ironisnya, ruang kosong itu sering kali tidak kita gunakan untuk mengaji. Alih-alih tadarus, pikiran kita justru melayang menyusun rencana menu berbuka. Waktu sore yang berharga malah habis di jalanan untuk berburu takjil. Kita berhasil menahan makanan masuk ke mulut, namun <em>gagal menahan makanan memenuhi isi kepala kita</em>.",
+      "Mari kita ubah sudut pandang kita mulai hari ini. Lapar yang mendera di tengah hari bukanlah sebuah siksaan fisik yang harus diratapi. <strong>Lapar adalah cara Allah menidurkan nafsu tubuh kita, agar ruhani kita bisa terbangun dan memimpin.</strong> Saat tubuh melemah karena lapar, di situlah hati berada dalam kondisi paling jernih dan paling siap untuk menerima cahaya ayat-ayat-Nya.",
+    ],
+  },
+];
