@@ -285,4 +285,19 @@ const kultumData = [
       "Mari kita ubah sudut pandang kita mulai hari ini. Lapar yang mendera di tengah hari bukanlah sebuah siksaan fisik yang harus diratapi. <strong>Lapar adalah cara Allah menidurkan nafsu tubuh kita, agar ruhani kita bisa terbangun dan memimpin.</strong> Saat tubuh melemah karena lapar, di situlah hati berada dalam kondisi paling jernih dan paling siap untuk menerima cahaya ayat-ayat-Nya.",
     ],
   },
+
+   {
+    id: "kultum-2",
+    title: "Dirancang di Bawah Pengawasan-Nya: Rahasia di Balik Ujian",
+    speaker: "Ustaz Nouman Ali Khan",
+    videoId: "Y3oQ1JUz_pg",
+    content: [
+      "Pernahkah kita bertanya-tanya, mengapa saat kita berusaha mempertahankan kebenaran, ujian yang datang justru semakin berat? Ustaz Nouman Ali Khan menjelaskan rahasia indah ini melalui perjalanan hidup Nabi Musa, Nabi Nuh, dan Nabi Muhammad ﷺ.",
+      "Di dalam Al-Qur'an, Allah menggunakan frasa yang sangat spesifik dan menyentuh hati saat berbicara kepada para Nabi-Nya: <strong>'Engkau dibentuk di bawah pengawasan-Ku'</strong>. Segala kepedihan yang dialami Musa—mulai dari dihanyutkan ke sungai saat bayi, hingga tersesat di gurun—bukanlah sebuah kebetulan. Semua pengalaman itu adalah proses rekayasa ilahi (<em>divine engineering</em>) yang sengaja didesain untuk mempersiapkan mentalnya.",
+      "Hal serupa terjadi pada Nabi Nuh yang dicemooh karena membuat kapal di atas tanah kering, serta Nabi Muhammad ﷺ yang dihina habis-habisan di Makkah. Setiap hinaan dan rasa sakit yang mereka lewati telah diatur sedemikian rupa oleh Allah. Mengapa? Karena <strong>kekuatan dan kesabaran sejati hanya bisa ditempa melalui rasa sakit</strong>.",
+      "Pelajaran berharganya bagi kita: Saat kamu mencoba berdiri di atas kebenaran atau sekadar berusaha menjadi hamba yang lebih taat, kamu pasti akan menghadapi gesekan dan penolakan dari sekitarmu. Orang-orang mungkin akan menyerang atau menilaimu aneh. Namun ingatlah, rasa sakit itu adalah bagian dari cetak biru rancangan Allah untuk mendewasakanmu.",
+      "Teruslah melangkah maju dan pertahankan kebenaran itu sampai rasanya mustahil untuk bertahan. Karena tepat di titik kemustahilan itulah, Allah akan membukakan jalan keluar yang baru. Ingatlah, kamu tidak sedang menderita sendirian; <strong>kamu sedang dirancang dan dibentuk secara khusus, tepat di bawah pengawasan Sang Pencipta.</strong>",
+    ],
+  },
 ];
+
