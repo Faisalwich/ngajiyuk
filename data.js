@@ -299,5 +299,20 @@ const kultumData = [
       "Teruslah melangkah maju dan pertahankan kebenaran itu sampai rasanya mustahil untuk bertahan. Karena tepat di titik kemustahilan itulah, Allah akan membukakan jalan keluar yang baru. Ingatlah, kamu tidak sedang menderita sendirian; <strong>kamu sedang dirancang dan dibentuk secara khusus, tepat di bawah pengawasan Sang Pencipta.</strong>",
     ],
   },
+
+   {
+    id: "kultum-3",
+    title: "Rezeki, Jodoh, dan Kematian: Siapa yang Menjemput?",
+    speaker: "Redaksi NgajiYuk",
+    image: "https://images.unsplash.com/photo-1771532447058-8f1204e0dc31?q=80&w=989&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    content: [
+      "Ada sebuah ungkapan yang sangat menampar kita: <strong>'Ada 3 hal yang kita sebagai manusia nggak tahu jawabannya, yaitu rezeki, jodoh, dan kematian. Mungkin rezeki dan jodoh bisa kita jemput, tapi kematian? Siapa yang mau menjemput?'</strong>",
+      "Dalam Islam, ketiga hal tersebut adalah rahasia mutlak di tangan Allah (Ghaib). Namun, cara kita menyikapinya berbeda-beda. Untuk urusan rezeki dan jodoh, Allah memerintahkan kita untuk berikhtiar. Kita disuruh keluar rumah, bekerja keras menjemput rezeki, dan memantaskan diri untuk menjemput jodoh yang baik.",
+      "Tapi untuk urusan kematian (ajal), rumusnya terbalik. Kematian bukanlah sesuatu yang kita kejar atau kita jemput. Kematian adalah 'tamu' yang pasti akan datang menjemput kita. Bahkan, meski kita bersembunyi di dalam benteng yang tinggi dan kokoh sekalipun, kematian pasti akan menemukan alamat kita tepat pada waktunya.",
+      "Lantas, apa yang harus kita persiapkan? Jika untuk rezeki dan jodoh kita sibuk mempersiapkan <em>CV</em> dan mematut diri, maka untuk kematian kita harus sibuk mempersiapkan <strong>amal sholeh</strong>. Jangan sampai, ketika sang tamu itu datang menjemput, kita sedang dalam keadaan belum siap berkemas pulang.",
+      "Mari kita sama-sama berdoa, semoga di sisa umur yang entah sampai kapan ini, Allah senantiasa membimbing kita agar kelak dijemput dalam keadaan Husnul Khotimah. Aamiin.",
+    ],
+  },
 ];
+
 
