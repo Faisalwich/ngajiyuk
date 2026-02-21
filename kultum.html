@@ -1,151 +1,202 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kultum Pilihan - NgajiYuk</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
-        .glass-panel { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.6); }
-        
-        /* Style Khusus Teks Artikel */
-        .article-body strong { font-weight: 800; color: #0f172a; } 
-        .article-body em { font-style: italic; color: #059669; }
-        
-        /* Animasi Modal */
-        #modal-overlay.active { opacity: 1; pointer-events: auto; }
-        #modal-content.active { transform: scale(1); }
-    </style>
-</head>
-<body class="bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-100 min-h-screen flex flex-col relative pb-10 text-slate-800">
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+      .glass-panel {
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.6);
+      }
 
+      /* Style Khusus Teks Artikel */
+      .article-body strong {
+        font-weight: 800;
+        color: #0f172a;
+      }
+      .article-body em {
+        font-style: italic;
+        color: #059669;
+      }
+
+      /* Animasi Modal */
+      #modal-overlay.active {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #modal-content.active {
+        transform: scale(1);
+      }
+    </style>
+  </head>
+  <body class="bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-100 min-h-screen flex flex-col relative pb-10 text-slate-800">
     <div class="fixed top-0 left-0 w-64 h-64 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-40 -z-10"></div>
     <div class="fixed bottom-0 right-0 w-64 h-64 bg-cyan-200 rounded-full mix-blend-multiply filter blur-3xl opacity-40 -z-10"></div>
 
     <div class="p-6 flex items-center justify-between relative z-10 max-w-4xl mx-auto w-full">
-        <a href="index.html" class="w-12 h-12 glass-panel rounded-2xl flex items-center justify-center text-emerald-700 text-xl font-bold shadow-sm hover:bg-white active:scale-90 transition-all">←</a>
-        <h1 class="text-xl font-extrabold text-slate-800 tracking-tight">Kajian Pilihan</h1>
-        <div class="w-12 h-12"></div>
+      <a href="index.html" class="w-12 h-12 glass-panel rounded-2xl flex items-center justify-center text-emerald-700 text-xl font-bold shadow-sm hover:bg-white active:scale-90 transition-all">←</a>
+      <h1 class="text-xl font-extrabold text-slate-800 tracking-tight">Kajian Pilihan</h1>
+      <div class="w-12 h-12"></div>
     </div>
 
     <div class="flex-1 w-full max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
-        
-        <div class="mb-8 text-center">
-            <h2 class="text-3xl font-black text-slate-800 mb-2">Siraman Rohani</h2>
-            <p class="text-slate-500 text-sm">Refleksi dan intisari kajian untuk menenangkan hati.</p>
-        </div>
+      <div class="mb-8 text-center">
+        <h2 class="text-3xl font-black text-slate-800 mb-2">Siraman Rohani</h2>
+        <p class="text-slate-500 text-sm">Refleksi dan intisari kajian untuk menenangkan hati.</p>
+      </div>
 
-        <div id="kultum-container" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
-            </div>
-
+      <div id="kultum-container" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6"></div>
     </div>
 
-    <div id="modal-overlay" class="fixed inset-0 z-50 bg-slate-900/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 flex items-end sm:items-center justify-center sm:p-4">
-        
-        <div id="modal-content" class="bg-white w-full max-w-2xl max-h-[90vh] sm:rounded-[2rem] rounded-t-[2rem] overflow-hidden flex flex-col scale-95 transition-transform duration-300 shadow-2xl">
-            
-            <div class="flex justify-between items-center p-5 border-b border-slate-100">
-                <div class="flex-1 pr-4">
-                    <p class="text-[10px] text-emerald-600 font-bold uppercase tracking-widest mb-1" id="modal-speaker">Nama Ustaz</p>
-                    <h3 class="font-bold text-slate-800 leading-snug pr-4" id="modal-title">Judul Artikel</h3>
-                </div>
-                <button onclick="closeModal()" class="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center text-slate-500 hover:bg-red-100 hover:text-red-500 transition-colors">✕</button>
-            </div>
-
-            <div class="p-6 sm:p-8 overflow-y-auto article-body" id="modal-body">
-                </div>
-
-            <div class="p-5 border-t border-slate-100 bg-slate-50" id="modal-footer">
-                </div>
+    <div
+      id="modal-overlay"
+      class="fixed inset-0 z-50 bg-slate-900/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 flex items-end sm:items-center justify-center sm:p-4"
+    >
+      <div id="modal-content" class="bg-white w-full max-w-2xl max-h-[90vh] sm:rounded-[2rem] rounded-t-[2rem] overflow-hidden flex flex-col scale-95 transition-transform duration-300 shadow-2xl">
+        <div class="flex justify-between items-center p-5 border-b border-slate-100 relative z-20 bg-white">
+          <div class="flex-1 pr-4">
+            <p class="text-[10px] text-emerald-600 font-bold uppercase tracking-widest mb-1" id="modal-speaker">Nama Ustaz</p>
+            <h3 class="font-bold text-slate-800 leading-snug pr-4" id="modal-title">Judul Artikel</h3>
+          </div>
+          <button onclick="closeModal()" class="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center text-slate-500 hover:bg-red-100 hover:text-red-500 transition-colors">✕</button>
         </div>
+
+        <div class="overflow-y-auto flex-1 relative z-10">
+          <div class="relative w-full h-56 sm:h-80 bg-slate-200">
+            <img id="modal-image" src="" alt="" class="w-full h-full object-cover" />
+            <div id="modal-play-icon" class="absolute inset-0 bg-black/20 flex items-center justify-center hidden">
+              <div class="w-16 h-16 bg-white/30 backdrop-blur-md rounded-full flex items-center justify-center text-white text-3xl pl-1">▶</div>
+            </div>
+          </div>
+          <div class="p-6 sm:p-8 article-body" id="modal-body"></div>
+        </div>
+
+        <div class="p-5 border-t border-slate-100 bg-slate-50 relative z-20" id="modal-footer"></div>
+      </div>
     </div>
 
     <script src="data.js"></script>
-    
+
     <script>
-        const container = document.getElementById('kultum-container');
-        
-        // Elemen Modal
-        const modalOverlay = document.getElementById('modal-overlay');
-        const modalContent = document.getElementById('modal-content');
-        const modalTitle = document.getElementById('modal-title');
-        const modalSpeaker = document.getElementById('modal-speaker');
-        const modalBody = document.getElementById('modal-body');
-        const modalFooter = document.getElementById('modal-footer');
+      const container = document.getElementById("kultum-container");
 
-        // Fungsi Render Card Kecil
-        function renderKultum() {
-            container.innerHTML = "";
-            
-            kultumData.forEach((item, index) => {
-                const thumbnailUrl = `https://img.youtube.com/vi/${item.videoId}/hqdefault.jpg`;
+      const modalOverlay = document.getElementById("modal-overlay");
+      const modalContent = document.getElementById("modal-content");
+      const modalTitle = document.getElementById("modal-title");
+      const modalSpeaker = document.getElementById("modal-speaker");
+      const modalBody = document.getElementById("modal-body");
+      const modalFooter = document.getElementById("modal-footer");
 
-                container.innerHTML += `
+      // Elemen Baru untuk Header Foto
+      const modalImage = document.getElementById("modal-image");
+      const modalPlayIcon = document.getElementById("modal-play-icon");
+
+      function renderKultum() {
+        container.innerHTML = "";
+
+        kultumData.forEach((item, index) => {
+          // LOGIKA PINTAR THUMBNAIL KARTU KECIL
+          let thumbnailUrl = "";
+          if (item.videoId) {
+            thumbnailUrl = `https://img.youtube.com/vi/${item.videoId}/hqdefault.jpg`;
+          } else if (item.image) {
+            thumbnailUrl = item.image;
+          } else {
+            thumbnailUrl = "https://images.unsplash.com/photo-1576769267415-9642010aa962?q=80&w=600&auto=format&fit=crop";
+          }
+
+          const playIconSmall = item.videoId
+            ? `<div class="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"><div class="w-10 h-10 bg-white/30 backdrop-blur-md rounded-full flex items-center justify-center text-white pl-0.5">▶</div></div>`
+            : ``;
+
+          container.innerHTML += `
                     <div onclick="openModal(${index})" class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 cursor-pointer hover:shadow-xl hover:-translate-y-1 transition-all group flex flex-col h-full">
-                        
                         <div class="relative h-32 sm:h-40 w-full bg-slate-200 overflow-hidden">
                             <img src="${thumbnailUrl}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                <div class="w-10 h-10 bg-white/30 backdrop-blur-md rounded-full flex items-center justify-center text-white">▶</div>
-                            </div>
+                            ${playIconSmall}
                         </div>
-
                         <div class="p-4 sm:p-5 flex-1 flex flex-col">
                             <p class="text-[10px] font-bold text-emerald-500 uppercase tracking-widest mb-1 truncate">${item.speaker}</p>
                             <h3 class="text-sm sm:text-base font-bold text-slate-800 line-clamp-2 leading-snug mb-3">${item.title}</h3>
-                            
                             <p class="text-xs text-slate-400 mt-auto font-semibold flex items-center gap-1 group-hover:text-emerald-500 transition-colors">
                                 Baca Artikel <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"></path></svg>
                             </p>
                         </div>
                     </div>
                 `;
-            });
-        }
-
-        // Fungsi Buka Modal
-        function openModal(index) {
-            const item = kultumData[index];
-            const paragraphs = item.content || item.summary;
-            const youtubeLink = `https://www.youtube.com/watch?v=${item.videoId}`;
-            
-            // Isi Data ke Modal
-            modalTitle.innerText = item.title;
-            modalSpeaker.innerText = "🎙️ " + item.speaker;
-            
-            let contentHtml = "";
-            paragraphs.forEach(paragraph => {
-                contentHtml += `<p class="text-slate-700 text-[15px] sm:text-base leading-relaxed sm:leading-loose mb-5">${paragraph}</p>`;
-            });
-            modalBody.innerHTML = contentHtml;
-
-            modalFooter.innerHTML = `
-                <a href="${youtubeLink}" target="_blank" class="w-full bg-white hover:bg-slate-100 border border-slate-200 text-slate-800 py-3 rounded-xl font-bold flex items-center justify-center gap-2 transition-all active:scale-95 text-sm shadow-sm">
-                    <svg class="w-5 h-5 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
-                    Tonton Versi Full di YouTube
-                </a>
-            `;
-
-            modalOverlay.classList.add('active');
-            modalContent.classList.add('active');
-            document.body.style.overflow = 'hidden'; 
-        }
-
-        function closeModal() {
-            modalOverlay.classList.remove('active');
-            modalContent.classList.remove('active');
-            document.body.style.overflow = 'auto'; 
-        }
-
-        modalOverlay.addEventListener('click', function(e) {
-            if (e.target === modalOverlay) {
-                closeModal();
-            }
         });
+      }
 
-        renderKultum();
+      function openModal(index) {
+        const item = kultumData[index];
+        const paragraphs = item.content || item.summary;
+
+        modalTitle.innerText = item.title;
+        modalSpeaker.innerText = (item.videoId ? "🎙️ " : "✍️ ") + item.speaker;
+
+        // ---- LOGIKA PINTAR HEADER FOTO MODAL ----
+        let headerImageUrl = "";
+        if (item.videoId) {
+          // Kalau video YouTube: Pakai thumbnailnya + Munculkan Ikon Play Besar
+          headerImageUrl = `https://img.youtube.com/vi/${item.videoId}/hqdefault.jpg`;
+          modalPlayIcon.classList.remove("hidden");
+          modalPlayIcon.classList.add("flex");
+        } else {
+          // Kalau artikel biasa: Pakai gambar custom + Sembunyikan Ikon Play
+          headerImageUrl = item.image || "https://images.unsplash.com/photo-1576769267415-9642010aa962?q=80&w=600&auto=format&fit=crop";
+          modalPlayIcon.classList.add("hidden");
+          modalPlayIcon.classList.remove("flex");
+        }
+        // Pasang gambarnya
+        modalImage.src = headerImageUrl;
+        // -----------------------------------------
+
+        let contentHtml = "";
+        paragraphs.forEach((paragraph) => {
+          contentHtml += `<p class="text-slate-700 text-[15px] sm:text-base leading-relaxed sm:leading-loose mb-5">${paragraph}</p>`;
+        });
+        modalBody.innerHTML = contentHtml;
+
+        // Logika Tombol Footer YouTube
+        if (item.videoId) {
+          const youtubeLink = `https://www.youtube.com/watch?v=${item.videoId}`;
+          modalFooter.innerHTML = `
+                    <a href="${youtubeLink}" target="_blank" class="w-full bg-white hover:bg-slate-100 border border-slate-200 text-slate-800 py-3 rounded-xl font-bold flex items-center justify-center gap-2 transition-all active:scale-95 text-sm shadow-sm">
+                        <svg class="w-5 h-5 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                        Tonton Versi Full di YouTube
+                    </a>
+                `;
+          modalFooter.style.display = "block";
+        } else {
+          modalFooter.innerHTML = "";
+          modalFooter.style.display = "none";
+        }
+
+        modalOverlay.classList.add("active");
+        modalContent.classList.add("active");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeModal() {
+        modalOverlay.classList.remove("active");
+        modalContent.classList.remove("active");
+        document.body.style.overflow = "auto";
+      }
+
+      modalOverlay.addEventListener("click", function (e) {
+        if (e.target === modalOverlay) {
+          closeModal();
+        }
+      });
+
+      renderKultum();
     </script>
-</body>
+  </body>
 </html>
