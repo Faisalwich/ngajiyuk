@@ -313,6 +313,21 @@ const kultumData = [
       "Mari kita sama-sama berdoa, semoga di sisa umur yang entah sampai kapan ini, Allah senantiasa membimbing kita agar kelak dijemput dalam keadaan Husnul Khotimah. Aamiin.",
     ],
   },
+
+  {
+    id: "kultum-4",
+    title: "Obat Overthinking: Menyerahkan 'Setir' Kehidupan",
+    speaker: "Redaksi NgajiYuk",
+    image: "https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?q=80&w=800&auto=format&fit=crop", 
+    content: [
+      "Pernahkah kamu kesulitan tidur di malam hari karena otakmu terus memutar skenario masa depan yang belum tentu terjadi? Ya, penyakit generasi kita saat ini bernama <em>overthinking</em>.",
+      "Kita seringkali merasa stres dan cemas karena kita bersikeras ingin mengendalikan segalanya. Kita ingin karir kita berjalan sesuai <em>timeline</em>, kita ingin jodoh datang di umur sekian, dan kita panik saat rencana itu meleset. Padahal, kita lupa satu hal mendasar: <strong>Kita bukanlah sutradara kehidupan kita sendiri.</strong>",
+      "Dalam Islam, ada konsep indah bernama <strong>Tawakkal</strong>. Tawakkal bukan berarti pasrah tanpa usaha. Seperti pesan Nabi ﷺ: <em>'Ikatlah untamu, lalu bertawakallah'</em>. Artinya, kerjakan apa yang menjadi porsimu (belajar, bekerja, berdoa), lalu serahkan hasil akhirnya—atau 'setir' kehidupannya—sepenuhnya kepada Allah.",
+      "Ketika kita membiarkan Allah yang mengambil alih kemudi, rasa cemas itu perlahan akan hilang. Kenapa? Karena kita tahu bahwa Yang Maha Mengatur tidak pernah salah jadwal. Rencana-Nya selalu lebih indah dan lebih tepat waktu daripada rencana kita.",
+      "Jadi, malam ini, tarik napas panjang, tutup matamu, dan tidurlah dengan tenang. Biarkan Sang Maha Perencana yang mengurus hari esokmu."
+    ]
+  }
 ];
+
 
 
