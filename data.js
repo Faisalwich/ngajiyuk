@@ -327,7 +327,26 @@ const kultumData = [
       "Jadi, malam ini, tarik napas panjang, tutup matamu, dan tidurlah dengan tenang. Biarkan Sang Maha Perencana yang mengurus hari esokmu."
     ]
   }
+
+  {
+    id: "kultum-5",
+    title: "Seni Menakar Nikmat: Cukup",
+    speaker: "Redaksi NgajiYuk",
+    image:
+      "https://images.unsplash.com/photo-1632651540557-6ff6358ee988?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cmFtYWRhbiUyMGRhdGVzJTIwbWluaW1hbHxlbnwwfHwwfHx8MA%3D%3D",
+    content: [
+      "Pernahkah kita menyadari sebuah pola sederhana dalam kehidupan sehari-hari?",
+      "Makanan dengan porsi yang sedikit sering kali terasa jauh lebih nikmat. Bumbunya lebih terasa, setiap suapannya lebih dihargai, dan selalu berhasil membuat kita ingin menambah porsi. Namun, apa yang terjadi ketika kita benar-benar menambah porsi tersebut? Rasa yang tadinya luar biasa lezat, perlahan-lahan turun menjadi biasa saja. Rasa penasaran itu hilang, dan pada akhirnya justru mendatangkan rasa begah.",
+      "Mungkin, begitulah cara kehidupan mengajarkan kita sebuah pelajaran berharga: bahwa kenikmatan sejati adalah tentang mengetahui batas. Kebahagiaan bukan tentang memiliki sebanyak-banyaknya, melainkan tentang mengetahui kapan harus merasa cukup.",
+      "Dalam ajaran Islam, seni 'tahu batas' dan merasa cukup ini dikenal dengan sifat <strong>Qana'ah</strong>.",
+      "Bulan Ramadan, khususnya pada momen berbuka puasa, memberikan contoh nyata mengenai hal ini. Saat azan Magrib berkumandang, seteguk air putih dan sebutir kurma terasa sebagai nikmat yang sangat mewah. Namun, jika kita membiarkan hawa nafsu mengambil alih dan menyantap semua hidangan di meja, kenikmatan tersebut sirna. Ia berganti menjadi rasa kantuk dan malas, yang pada akhirnya justru memberatkan kita untuk melaksanakan ibadah shalat Tarawih.",
+      '<div class="bg-emerald-50 border-l-4 border-emerald-500 p-4 rounded-r-xl my-6"><p class="text-sm text-emerald-800 font-medium italic">"Makan dan minumlah, tetapi jangan berlebih-lebihan. Sesungguhnya Allah tidak menyukai orang yang berlebih-lebihan."</p><p class="text-xs text-emerald-600 mt-2 font-bold">— (QS. Al-A\'raf: 31)</p></div>',
+      "Ibadah puasa yang kini memasuki hari kelima mengajarkan kita untuk mengatur kembali standar kebahagiaan kita. Ia mengajarkan kita untuk mengerem hawa nafsu dan belajar berhenti sebelum kenyang. Bukan hanya dalam urusan makanan, tetapi juga dalam mengejar ambisi duniawi, ekspektasi, dan validasi dari manusia.",
+      "Sebab, kebahagiaan yang sesungguhnya hadir ketika kita berhenti menuntut lebih, dan mulai bersyukur atas apa yang sudah ada di dalam genggaman.",
+    ],
+  },
 ];
+
 
 
 
