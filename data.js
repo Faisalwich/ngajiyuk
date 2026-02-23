@@ -325,7 +325,7 @@ const kultumData = [
       "Dalam Islam, ada konsep indah bernama <strong>Tawakkal</strong>. Tawakkal bukan berarti pasrah tanpa usaha. Seperti pesan Nabi ﷺ: <em>'Ikatlah untamu, lalu bertawakallah'</em>. Artinya, kerjakan apa yang menjadi porsimu (belajar, bekerja, berdoa), lalu serahkan hasil akhirnya—atau 'setir' kehidupannya—sepenuhnya kepada Allah.",
       "Ketika kita membiarkan Allah yang mengambil alih kemudi, rasa cemas itu perlahan akan hilang. Kenapa? Karena kita tahu bahwa Yang Maha Mengatur tidak pernah salah jadwal. Rencana-Nya selalu lebih indah dan lebih tepat waktu daripada rencana kita.",
       "Jadi, malam ini, tarik napas panjang, tutup matamu, dan tidurlah dengan tenang. Biarkan Sang Maha Perencana yang mengurus hari esokmu."
-    ]
+    ],
   },
 
   {
@@ -346,6 +346,7 @@ const kultumData = [
     ],
   },
 ];
+
 
 
 
