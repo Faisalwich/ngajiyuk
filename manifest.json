@@ -1,0 +1,22 @@
+{
+  "name": "NgajiYuk Pro",
+  "short_name": "NgajiYuk",
+  "description": "Super App Islami Spesial Ramadhan",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ecfdf5",
+  "theme_color": "#10b981",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/8662/8662284.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/8662/8662284.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
