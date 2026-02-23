@@ -326,7 +326,7 @@ const kultumData = [
       "Ketika kita membiarkan Allah yang mengambil alih kemudi, rasa cemas itu perlahan akan hilang. Kenapa? Karena kita tahu bahwa Yang Maha Mengatur tidak pernah salah jadwal. Rencana-Nya selalu lebih indah dan lebih tepat waktu daripada rencana kita.",
       "Jadi, malam ini, tarik napas panjang, tutup matamu, dan tidurlah dengan tenang. Biarkan Sang Maha Perencana yang mengurus hari esokmu."
     ]
-  }
+  },
 
   {
     id: "kultum-5",
@@ -346,6 +346,7 @@ const kultumData = [
     ],
   },
 ];
+
 
 
 
