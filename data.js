@@ -345,7 +345,24 @@ const kultumData = [
       "Sebab, kebahagiaan yang sesungguhnya hadir ketika kita berhenti menuntut lebih, dan mulai bersyukur atas apa yang sudah ada di dalam genggaman.",
     ],
   },
+
+  {
+    id: "kultum-6",
+    title: "Puasa Lisan: Menahan yang Tak Terlihat",
+    speaker: "Redaksi NgajiYuk",
+    image: "https://images.unsplash.com/photo-1704814685609-88f7d913aa49?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dmliZSUyMHBhZ2klMjBoYXJpJTIweWFuZyUyMHRlbmFuZyUyQyUyMHNlY2FuZ2tpciUyMGtvcGklMkZ0ZWglMjAoa29zb25nKSUyQyUyMGRhbiUyMGJ1a3UlMjBjYXRhdGFufGVufDB8fDB8fHww",
+    content: [
+      "Memasuki hari keenam, rasa lapar dan dahaga mungkin sudah bukan lagi masalah besar. Tubuh kita hebat, ia beradaptasi dengan cepat. Namun, justru di fase inilah ujian sesungguhnya sering kali dimulai. Ujian itu bukan lagi berasal dari perut yang kosong, melainkan dari lisan yang tak terkontrol.",
+      "Sering kali kita merasa aman hanya karena sudah tidak makan dan minum. Padahal, Nabi Muhammad ﷺ pernah memberikan peringatan keras yang cukup menampar kita:",
+      "<div class=\"bg-emerald-50 border-l-4 border-emerald-500 p-4 rounded-r-xl my-6\"><p class=\"text-sm text-emerald-800 font-medium italic\">\"Betapa banyak orang yang berpuasa, namun dia tidak mendapatkan apa-apa dari puasanya tersebut kecuali rasa lapar dan dahaga.\"</p><p class=\"text-xs text-emerald-600 mt-2 font-bold\">— (HR. Thabrani)</p></div>",
+      "Kenapa bisa rugi bandar seperti itu? Karena kita sibuk memuasakan perut, tapi lupa memuasakan lisan dari ghibah, keluhan, dan komentar pedas di media sosial. Kita menahan yang halal (makanan), tapi justru memakan yang haram (bangkai saudara sendiri lewat gunjingan).",
+      "Imam Al-Ghazali menyebut ini sebagai tingkatan puasa. Puasa perut adalah tingkatan paling dasar (awam). Namun, puasa 'Jalur VIP' (Khusus) adalah ketika kita mampu memuasakan panca indera—terutama lisan—dari hal-hal yang tidak bermanfaat.",
+      "Hari ini, mari kita coba tantangan baru: <strong>Silent Mode</strong>. Aktifkan mode diam untuk hal-hal yang tidak perlu. Sebelum mengetik komentar atau melontarkan ucapan, tanyakan dulu pada diri sendiri: <em>\"Apakah kalimat ini akan menambah pahala puasaku, atau justru menghanguskannya?\"</em>",
+      "Ingatlah, keselamatan puasa kita hari ini mungkin bukan terletak pada seberapa banyak rakaat shalat kita, melainkan pada seberapa rapat kita menjaga lisan."
+    ],
+  },
 ];
+
 
 
 
