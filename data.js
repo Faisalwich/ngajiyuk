@@ -361,7 +361,26 @@ const kultumData = [
       "Ingatlah, keselamatan puasa kita hari ini mungkin bukan terletak pada seberapa banyak rakaat shalat kita, melainkan pada seberapa rapat kita menjaga lisan."
     ],
   },
+
+  {
+    id: "kultum-6",
+    title: "Putih: Kematian Hanyalah Perpindahan",
+    speaker: "Redaksi NgajiYuk",
+    image: "https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?q=80&w=900&auto=format&fit=crop", // Visual: Bunga putih/alam yang hening
+    content: [
+      "Lirik lagu 'Putih' dari Efek Rumah Kaca memiliki cara yang unik untuk menampar kesadaran kita. Ia tidak berteriak, tapi berbisik tentang realita yang pasti terjadi:",
+      "<em>\"Saat kematian datang... Aku berbaring dalam mobil ambulans... Sirene berlarian sahut-sahutan tegang... Membuka jalan menuju Tuhan.\"</em>",
+      "Seringkali kita merinding membayangkan momen itu. Namun, lirik selanjutnya justru mengubah ketakutan menjadi sebuah pemahaman yang dalam: <strong><em>\"Dan kematian hanya perpindahan. Dan kematian awal kekekalan.\"</em></strong>",
+      "Kalimat ini senada dengan pandangan Islam. Dunia ini hanyalah terminal sementara, dan kematian adalah gerbang 'perpindahan' menuju keabadian. Rasulullah ﷺ pun mengingatkan kita untuk hidup di dunia layaknya seorang pengembara yang sedang berteduh sejenak.",
+      "Lalu, ada satu baris lirik yang sangat filosofis: <strong><em>\"Karna kematian untuk kehidupan.\"</em></strong>",
+      "Ini adalah inti dari segalanya. Kematian ada justru untuk memberi nilai pada kehidupan. Jika kita hidup selamanya, waktu tak akan berharga. Tapi karena kita tahu 'kontrak' kita di dunia bisa habis sewaktu-waktu (entah di persimpangan atau kerongkongan), maka setiap detik menjadi sangat mahal.",
+      "Di bagian akhir, lagu ini mengingatkan tentang apa yang sebenarnya kita bawa saat pindah nanti. Bukan harta, bukan tahta, melainkan: <strong><em>\"Tentang kebenaran... Juga kejujuran... Takkan mati kekeringan, esok kan bermekaran.\"</em></strong>",
+      "Di hari keenam Ramadhan ini, mari kita tanam benih kejujuran dan kebaikan. Agar kelak, saat sirene itu berbunyi untuk kita, yang tertinggal di dunia adalah 'bunga-bunga' kebaikan yang terus bermekaran.",
+      "Karena kematian bukanlah akhir. Ia adalah awal kekekalan."
+    ],
+  },
 ];
+
 
 
 
