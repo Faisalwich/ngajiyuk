@@ -363,7 +363,7 @@ const kultumData = [
   },
 
   {
-    id: "kultum-6",
+    id: "kultum-7",
     title: "Putih: Kematian Hanyalah Perpindahan",
     speaker: "Redaksi NgajiYuk",
     image: "https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?q=80&w=900&auto=format&fit=crop", // Visual: Bunga putih/alam yang hening
@@ -380,6 +380,7 @@ const kultumData = [
     ],
   },
 ];
+
 
 
 
